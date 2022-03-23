@@ -1,0 +1,30 @@
+---
+title: "Assignment 1"
+author: "Huy Nguyen"
+date: "01/16/2022"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Question 3
+
+This dataset predicts the age of abalone, also known as marine snails, from physical measurements. This dataset was collected in December 1995. The age of abalone is determined by counting the number of its rings through a microscope and measuring its length, height, and weight. There are a total of 8 attributes. The only nominal attribute in the dataset is the sex of the abalone, which is categorized under M (male), F(female), or I(infant). Other continuous variables such as length, diameter, and height are measured in mm (millimeters), and the weight of the abalone and its components (meat, viscera, shell) is measured in g (grams). While these measurements are easy to obtain to predict the age of an abalone, a more accurate measurement of its age is obtained by counting its number of rings, which is a tedious and time-consuming process, and adding it by 1.5. The unit for the age of abalone is represented in years.
+
+Below is a histogram of the number of abalones with different amount of rings and a pdf of a nomral distribution:
+
+``` {r abalone, echo = FALSE}
+df = read.table('abalone.data', header = FALSE, sep = ",", quote = "")
+
+clmn = df$V9
+
+m = mean(clmn)
+std = (sd(clmn))
+
+hist(clmn, main = "Number of abalones with different rings", prob = TRUE, ylab = "Density", ylim = c(0, 0.2), xlab = "Rings")
+
+curve(dnorm(x, mean = m, sd =std), col = "red", lwd = 2, add = TRUE)
+
+```
