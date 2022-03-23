@@ -1,0 +1,27 @@
+---
+title: "Assignment 2"
+author: "Huy Nguyen"
+date: "24/01/2022"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Problem 2
+
+a)
+
+``` {r, echo = FALSE}
+
+radius = seq(length = 10000, from = 1, to = 9)
+volume = 4/3*pi*radius^3
+
+par(mfrow = c(1,1))
+plot(radius, volume, main = "Plot of the Volume of a Sphere", xlab = "Radius", ylab = "Volume", ylim = c(0,1500), xlim = c(-1,9), col = "blue", lwd = 2, type = "l", lty = 1, cex = 1)
+
+```
+
+b)
+
