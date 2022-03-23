@@ -1,0 +1,31 @@
+---
+title: "Assignment 2"
+author: "Huy Nguyen"
+date: "25/01/2022"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Problem 6
+
+a) Sum of the first 20 Fibonacci numbers:
+
+``` {r, echo = FALSE}
+
+sumfib = function(n){
+  if(n <= 0){
+    return(0)
+  }
+  if (n <= 2){
+    return(1)
+  }
+  return (sumfib(n-1) + sumfib(n-2))
+}
+
+sumfib(20 + 2) - 1
+
+
+```

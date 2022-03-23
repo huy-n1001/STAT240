@@ -1,0 +1,38 @@
+---
+title: "Assignment 2"
+author: "Huy Nguyen"
+date: "25/01/2022"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Question 4
+
+a)
+
+``` {r, echo = FALSE}
+
+poke = read.csv(file = "pokemon_2019.csv")
+
+for (i in poke[poke[,"Height_m"]>2 & poke[, "isLegendary"] == "True","Name"])
+  print(i)
+
+```
+
+b) 
+
+``` {r, echo = FALSE}
+body = poke[poke[, "Body_Style"] == "serpentine_body",]
+
+plot(x = body$Attack, y = body$Defense, main = "Attack vs Defense", xlab = "Attack", ylab = "Defense", xlim = c(0,160), pch = 20, col = 2, cex = 1)
+
+harms = poke[poke[, "Body_Style"] == "head_arms",]
+
+points(x = harms$Attack, y = harms$Defense, col = 3, pch = 20)
+
+legend(x = "topleft", col = 2:3, pch = c(20,20), c("serpentine_body", "head_arms"))
+
+```

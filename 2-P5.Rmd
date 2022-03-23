@@ -1,0 +1,54 @@
+---
+title: "Assignment 2"
+author: "Huy Nguyen"
+date: "25/01/2022"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Problem 5
+
+``` {r, echo = FALSE}
+
+poke = read.csv(file = "pokemon_2019.csv")
+pokenew = poke[1,]
+for (i in 1:23) {
+  pokenew[i] = NA
+}
+
+pokenew$Name = "Huy"
+pokenew$Type_1 = "student"
+pokenew$Number = 722
+pokenew$Type_2 = "Poison"
+pokenew$HP = 100
+pokenew$Attack = 150
+pokenew$Defense = 200
+pokenew$Sp_Atk = 135
+pokenew$Sp_Def = 125
+pokenew$Speed = 45
+pokenew$Total = 755
+pokenew$Generation = 1
+pokenew$isLegendary = "TRUE"
+pokenew$Color = "Yellow"
+pokenew$hasGender = "TRUE"
+pokenew$Pr_Male = 0.875
+pokenew$Egg_Group_1 = "Flying"
+pokenew$Egg_Group_2 = "Grass"
+pokenew$hasMegaEvolution = "TRUE"
+pokenew$Height_m = 1.85
+pokenew$Weight_kg = 71.2
+pokenew$Catch_Rate = 1
+pokenew$Body_Style = "two_wings"
+
+pokemonextra = rbind(pokenew, poke) #attach pokenew to poke, making the new sheet pokemonextra
+
+# Graphs a horizontal barplot by categorizing types of pokemon
+
+res = pokemonextra[pokemonextra[,"Height_m"]>1 & pokemonextra[, "Weight_kg"]>1,]
+
+barplot(table(res[,"Type_1"]),las = 2, horiz = TRUE, main = "Pokemon Types Higher than 1 Meter and Larger than 1kg", xlab = "Count", cex.names = 0.7)
+
+```
