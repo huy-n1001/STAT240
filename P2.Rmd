@@ -1,0 +1,53 @@
+---
+title: "Assignment 1"
+author: "Huy Nguyen"
+date: "01/16/2022"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Question 2
+
+a) for(i in 1+2:3.4*5) { }
+
+The values the variable i takes in are 11 and 16. The colon specifies the lower bound, which is 2, and the upper bound, which is 3.4. The value 3.4 will be rounded down to 3, so the new expression would be 1+2:3\*5 The values between 2 and 3 will be just 2 and 3, so there would be two expressions: 1+2\*5 and 1+3\*5. Using algebraic notations, the final values will be 11 and 16.
+
+b) for(i in dim(matrix(0, nr = 7, nc = 8))) { }
+
+The values are 7 and 8. The loop runs a dimension function of a matrix, which specifies the number of its rows, which is 7, and the number of its columns, which is 8. The variable i takes in the values of the dim function, which is 7 and 8.
+
+c) for(i in rnorm(3)) { }
+
+The values are 3 random numbers generated in a normal distribution. The function rnorm() creates a random number that follows normal distribution. The input 3 in the function tells that 3 random numbers are created under normal distribution.
+
+d) for(i in iris[1:3,3]) { }
+
+The values are 1.4, 1.4, and 1.3 respectively. These values are found in the third column in the *iris* data frame. The expression '1:3' in the square brackets indicates the first 3 values in the third column of the data frame, which are 1.4, 1.4, and 1.3. If we run the code:
+
+``` {}
+head (x = iris)
+```
+
+This generates the first six rows of the data frame as well as the title of the columns. We can see that the third column is the petal length of a flower.
+
+e) for(j in c(1, 2, 3, 4, 5)) { 
+
+The variable i does not take in any value here because there is no variable 'i' in the expression. Also the function should not be able to compile because there is a missing curly bracket '}'. 
+
+f) for(i in (function(x) x*x)(c(1, 2, 3))) { }
+
+The values for the variable i are 1, 4, and 9. Inside the for loop, there is a defined function x in which it multiplies itself. The function c() concatenates the values (1, 2, 3) into i, which makes i a vector. The values (1, 2, 3) are processed in function(x), which results into the vector i with the values of (1, 4, 9).
+
+g) for(i in NULL) { }
+
+The variable i does not take in any values here as i is assigned to NULL, which is an empty list. This means i takes in an empty list of values.
+
+h) for(i in strsplit(as.character(4*atan(1)),'')[[1]][1:10]) { }
+
+The values the variable i takes in are "3", ".", "1", "4", "1", "5", "9", "2", "6", "5". These values are obtained from the strsplit function, which splits the strings a character vector into substrings. The character vector here is 3.14159265, which is resulted from the equation '4\*atan(1), or also known as pi. The as.character() function returns the strings of the character vector of pi, and only returns the first 10 characters, as denoted by the range 1:10. The delimiter \'' in the as.character() function splits every character of the string.
+
+
+
